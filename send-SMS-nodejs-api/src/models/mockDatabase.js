@@ -1,4 +1,3 @@
-// Author: TrungQuanDev: https://youtube.com/@trungquandev
 
 /**
  * Mock nhanh thông tin thay vì phải tạo Database rồi query.
@@ -7,8 +6,8 @@
  */
 
 export const MOCK_USER = {
-  ID: 'trungquandev-sample-id-12345678',
-  EMAIL: 'trungquandev.official@gmail.com',
-  PASSWORD: 'trungquandev@123',
-  USERNAME: 'TrungQuanDev - Một Lập Trình Viên'
+  ID: 'id-12345678',
+  EMAIL: 'linh123@gmail.com',
+  PASSWORD: 'linh123@123',
+  USERNAME: 'Linh123 - Một Lập Trình Viên'
 }

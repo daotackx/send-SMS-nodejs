@@ -1,6 +1,6 @@
-// Author: TrungQuanDev: https://youtube.com/@trungquandev
 import { StatusCodes } from 'http-status-codes'
 import { MOCK_USER } from '~/models/mockDatabase'
+import { TwilioSmsProvider } from '~/providers/TwilioSmsProvider'
 
 
 const register = async (req, res) => {
@@ -11,6 +11,11 @@ const register = async (req, res) => {
 
     // Gửi sms cho user sau khi đăng ký tài khoản, có thể là sms xác nhận, sms welcome...vv
     // Bước gửi sms này sẽ là việc gửi hành động đến một dịch vụ bên thứ 3.
+    const smsResponse = await TwilioSmsProvider.sendSMS({
+      to: '+84999999999', // Ở đây mình dùng email để demo luôn nhé, trong thực tế bạn sẽ dùng số điện thoại của user.
+      body: `Chào mừng ${createdUser.USERNAME} đã đến với Linh. Chúc bạn một ngày tốt lành!`
+    })
+    console.log('smsResponse', smsResponse.body)
 
     // Trả về response với thông tin user đã được tạo
     res.status(StatusCodes.OK).json(createdUser)
